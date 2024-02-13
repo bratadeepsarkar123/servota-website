@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="poll-container">
+        <h2 class="poll-question">Do you like this website?</h2>
+        <div class="poll-options">
+            <button class="poll-option" onclick="recordAnswer('yes')">Yes</button>
+            <button class="poll-option" onclick="recordAnswer('no')">No</button>
+        </div>
+    </div>
+
+    <script>
+        function recordAnswer(answer) {
+            // Record the answer (You can implement the recording logic here)
+            alert('Thank you for answering! We will review your response shortly.');
+            window.location.href = "index.html"; // Redirect back to the main page
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<section id="contact" class="feature">
+    <h2>Contact Us</h2>
+    
+    <!-- Contact Information -->
+    <div class="contact-info">
+        <p><strong>Company Name:</strong> servota</p>
+        <p><strong>Address:</strong> something something something</p>
+        <p><strong>Phone:</strong> 99745 76388</p>
+        <p><strong>Email:</strong> bratadeepsarkar1234@gmail.com</p>
+        <!-- Social Media Links (if any) -->
+        <!-- Replace "#" with actual links -->
+        <p><strong>Follow us:</strong> <a href="#">@pedashoulas</a></p>
+    </div>
+    
+    <!-- Contact Form (optional) -->
+    <div class="contact-form">
+        <h3>Send us a message</h3>
+        <form action="submit_contact_form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" value="bratadeep sarkar" required><br>
+            <input type="email" name="email" placeholder="Your Email" value="bratadeepsarkar1234@gmail.com" required><br>
+            <input type="tel" name="phone" placeholder="Your Phone" value="9974576388"><br>
+            <textarea name="message" placeholder="Your Message" rows="4">instagram - @pedashoulas</textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    
+    <!-- Map (optional) -->
+    <div class="map">
+        <!-- You can embed a map here using Google Maps or any other mapping service -->
+        <!-- Replace "YOUR_GOOGLE_MAPS_EMBED_CODE" with actual map code -->
+        <!-- or provide a link to your location if you have one -->
+    </div>
+</section>

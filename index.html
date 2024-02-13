@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for the poll item */
+        .poll-container {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .poll-container.show {
+            opacity: 1;
+        }
+        .poll-question {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .poll-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .poll-option {
+            padding: 10px 20px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .poll-option:hover {
+            background-color: #ccc;
+        }
+        .thank-you-message {
+            display: none;
+            font-size: 16px;
+            margin-top: 15px;
+            color: green;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prototype Website</h1>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="services.html">Our Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <main class="container">
+        <!-- Content of each page will be loaded here dynamically -->
+        <!-- Poll Section -->
+        <div class="poll-container" id="poll">
+            <h2 class="poll-question">Do you like this website?</h2>
+            <div class="poll-options">
+                <button class="poll-option" onclick="recordAnswer('yes')">Yes</button>
+                <button class="poll-option" onclick="recordAnswer('no')">No</button>
+            </div>
+            <div class="thank-you-message" id="thankYouMessage">
+                Thank you for your response!
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright reserved</p>
+    </footer>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_TRACKING_ID');
+
+        function recordAnswer(answer) {
+            // Record the answer (You can implement the recording logic here)
+            // For now, let's just show the thank you message and hide the poll
+            document.getElementById('poll').classList.remove('show');
+            document.getElementById('thankYouMessage').style.display = 'block';
+
+            // Replace the poll container with the thank you message after it disappears
+            setTimeout(function() {
+                document.getElementById('poll').style.display = 'none';
+                document.getElementById('thankYouMessage').style.display = 'none';
+                var thankYouNote = document.createElement('div');
+                thankYouNote.innerHTML = 'Thank you for your response!';
+                document.querySelector('.container').appendChild(thankYouNote);
+            }, 1500); // Adjust the time delay as needed (1.5 seconds in this example)
+        }
+
+        // Show the poll animatedly after the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('poll').classList.add('show');
+        });
+    </script>
+</body>
+</html>
