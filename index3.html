@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Call Button</title>
+<style>
+    /* Style for the call button */
+    .call-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<button class="call-button" onclick="makeCall()">Call Us</button>
+
+<script>
+function makeCall() {
+    // Replace '1234567890' with your desired phone number
+    var phoneNumber = '1234567890';
+
+    // Check if the device is a mobile device
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // If it's a mobile device, create a tel: link to trigger the phone call
+        window.location.href = 'tel:' + phoneNumber;
+    } else {
+        // If it's not a mobile device, provide a message indicating it's not supported
+        alert('Calling feature is only supported on mobile devices.');
+    }
+}
+</script>
+
+</body>
+</html>
