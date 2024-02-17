@@ -263,7 +263,7 @@
 
           if (isMobile) {
               // If it's a mobile device, create a tel: link to trigger the phone call
-              window.location.href = 'tel:' + phoneNumber + 'save_contact=' + encodeURIComponent(contactName);
+              window.location.href = 'tel:' + phoneNumber;
           } else if (window.innerWidth > 768 || !navigator.onLine) {
         // Replace 'your-whatsapp-api-url' with your actual WhatsApp API URL
               window.open('your-whatsapp-api-url', '_blank');
