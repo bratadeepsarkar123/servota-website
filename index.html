@@ -266,13 +266,14 @@
           var saveContactSupported = 'contacts' in navigator;
 
       
-          if (isMobile && saveContactSupported) {
+          /*if (isMobile && saveContactSupported) {
               // If it's a mobile device, create a tel: link to trigger the phone call
               window.location.href = 'tel:' + phoneNumber + ';save_contact=' + encodeURIComponent(contactName);
           //} else if (window.innerWidth > 768 || !navigator.onLine) {
         // Replace 'your-whatsapp-api-url' with your actual WhatsApp API URL
            //   window.open('your-whatsapp-api-url', '_blank');
-          } else if (isMobile) {
+          } else*/ 
+            if (isMobile) {
               // If it's a mobile device, create a tel: link to trigger the phone call
               window.location.href = 'tel:' + phoneNumber;
           } else {
