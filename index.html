@@ -260,13 +260,21 @@
 
           // Check if the device is a mobile device
           var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+          var contactName = 'Servota';
 
-          if (isMobile) {
+      // Check if the device supports saving contacts after making the call
+          var saveContactSupported = 'contacts' in navigator;
+
+      
+          if (isMobile && saveContactSupported) {
+              // If it's a mobile device, create a tel: link to trigger the phone call
+              window.location.href = 'tel:' + phoneNumber + ';save_contact=' + encodeURIComponent(contactName);
+          //} else if (window.innerWidth > 768 || !navigator.onLine) {
+        // Replace 'your-whatsapp-api-url' with your actual WhatsApp API URL
+           //   window.open('your-whatsapp-api-url', '_blank');
+          } else if (isMobile) {
               // If it's a mobile device, create a tel: link to trigger the phone call
               window.location.href = 'tel:' + phoneNumber;
-          } else if (window.innerWidth > 768 || !navigator.onLine) {
-        // Replace 'your-whatsapp-api-url' with your actual WhatsApp API URL
-              window.open('your-whatsapp-api-url', '_blank');
           } else {
               // If it's not a mobile device, provide a message indicating it's not supported
               alert('Calling feature is only supported on mobile devices.');
